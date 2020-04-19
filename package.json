@@ -1,0 +1,29 @@
+{
+  "name": "jenkins-cide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack src/app.js -o public/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmaciasc/jenkins-cide.git"
+  },
+  "keywords": [],
+  "author": "Héctor Macías <hectormaciasc@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hmaciasc/jenkins-cide/issues"
+  },
+  "homepage": "https://github.com/hmaciasc/jenkins-cide#readme",
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "terser": "^4.6.6"
+  }
+}
