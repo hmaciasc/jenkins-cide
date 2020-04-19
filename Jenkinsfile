@@ -11,8 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-              sh 'ls -la'
-                sh 'npm install'
+                sh 'npm ci'
             }
         }
         stage('Test') { 
@@ -20,5 +19,17 @@ pipeline {
                 sh 'npm test' 
             }
         }
+        stage('Deliver') { 
+            steps {
+                sh 'npm build' 
+            }
+        }
+    }
+    post {
+      success {
+          mail to: 'hectorremoca9791@officemalaga.com',
+              subject: "Successful Pipeline: ${currentBuild.fullDisplayName}",
+              body: "Build ${env.BUILD_URL} successful"
+      }
     }
 }
