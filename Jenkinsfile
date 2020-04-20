@@ -26,10 +26,6 @@ pipeline {
         }
     }
     post {
-      success {
-          mail to: 'hectorremoca9791@officemalaga.com',
-              subject: "Successful Pipeline: ${currentBuild.fullDisplayName}",
-              body: "Build ${env.BUILD_URL} successful"
-      }
+      success { echo 'Successful build and test' }
     }
 }
