@@ -12,6 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm ci'
+                sh 'npm build' 
             }
         }
         stage('Test') { 
@@ -19,9 +20,9 @@ pipeline {
                 sh 'npm test' 
             }
         }
-        stage('Deliver') { 
+        stage('Deploy') { 
             steps {
-                sh 'npm build' 
+              echo 'run deploy script to production...'
             }
         }
     }
